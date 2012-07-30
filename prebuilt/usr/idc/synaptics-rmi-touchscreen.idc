@@ -58,6 +58,6 @@ touch.size.calibration = normalized
 
 # Orientation
 touch.orientation.calibration = none
-
-# Type
+#Type
 touch.deviceType = touchScreen
+
