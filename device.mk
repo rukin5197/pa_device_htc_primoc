@@ -135,4 +135,4 @@ $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.goo.developerid=jmz \
 ro.goo.rom=cm9primoc \
-ro.goo.version=3
+ro.goo.version=4
