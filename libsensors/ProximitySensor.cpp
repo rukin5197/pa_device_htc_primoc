@@ -28,6 +28,9 @@
 
 #include "ProximitySensor.h"
 
+#define LOGE
+#define LOGE_IF
+
 /*****************************************************************************/
 
 ProximitySensor::ProximitySensor()

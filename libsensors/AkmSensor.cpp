@@ -28,6 +28,9 @@
 
 #include "AkmSensor.h"
 
+#define LOGE
+#define LOGE_IF
+
 /*****************************************************************************/
 
 AkmSensor::AkmSensor()

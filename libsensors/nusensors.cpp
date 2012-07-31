@@ -33,6 +33,9 @@
 #include "ProximitySensor.h"
 #include "AkmSensor.h"
 
+#define LOGE
+#define LOGE_IF
+
 /*****************************************************************************/
 
 struct sensors_poll_context_t {

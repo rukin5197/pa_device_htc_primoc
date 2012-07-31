@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/root/ueventd.primoc.rc:root/ueventd.primoc.rc
 
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/primoc/primoc-vendor.mk)
@@ -116,10 +116,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko
 
-
-# stuff common to all HTC phones
-#$(call inherit-product, device/htc/common/common.mk)
-
 $(call inherit-product, build/target/product/full_base.mk)
 
 # common msm7x30 configs
@@ -129,10 +125,10 @@ $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 $(call inherit-product, device/htc/primoc/media_a1026.mk)
 $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 
-$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 # Goo updater app
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.goo.developerid=jmz \
-ro.goo.rom=cm9primoc \
-ro.goo.version=4
+ro.goo.rom=cm10primoc \
+ro.goo.version=1
