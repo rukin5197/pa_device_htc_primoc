@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# common msm7x30 configs
+$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
@@ -117,9 +120,6 @@ PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko
 
 $(call inherit-product, build/target/product/full_base.mk)
-
-# common msm7x30 configs
-$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # HTC Audio
 $(call inherit-product, device/htc/primoc/media_a1026.mk)
