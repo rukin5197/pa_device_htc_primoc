@@ -77,7 +77,6 @@ PRODUCT_PACKAGES += \
 # Additional packages
 PRODUCT_PACKAGES += \
     GooManager \
-	Camera \
     PopNetwork
 
 # idc files
