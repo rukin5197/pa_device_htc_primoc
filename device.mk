@@ -70,14 +70,13 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/primoc/overlay
 
 # GPS / Lights / Sensors
 PRODUCT_PACKAGES += \
-    gps.primoc
-#    lights.primoc \
-#    sensors.primoc
+    gps.primoc \
+    lights.primoc \
+    sensors.primoc
 
 # Additional packages
 PRODUCT_PACKAGES += \
     GooManager \
-	Camera \
     PopNetwork
 
 # idc files

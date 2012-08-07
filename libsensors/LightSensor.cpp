@@ -28,8 +28,6 @@
 
 #include "LightSensor.h"
 
-#define LOGE_IF
-
 /*****************************************************************************/
 
 LightSensor::LightSensor()
@@ -79,7 +77,7 @@ int LightSensor::enable(int32_t, int en) {
         }
         err = ioctl(dev_fd, LIGHTSENSOR_IOCTL_ENABLE, &flags);
         err = err<0 ? -errno : 0;
-         LOGE_IF(err, "LIGHTSENSOR_IOCTL_ENABLE failed (%s)", strerror(-err));
+        ALOGE_IF(err, "LIGHTSENSOR_IOCTL_ENABLE failed (%s)", strerror(-err));
         if (!err) {
             mEnabled = en ? 1 : 0;
             if (en) {
@@ -133,7 +131,7 @@ int LightSensor::readEvents(sensors_event_t* data, int count)
                 numEventReceived++;
             }
         } else {
-             LOGE_IF("LightSensor: unknown event (type=%d, code=%d)",
+            ALOGE("LightSensor: unknown event (type=%d, code=%d)",
                     type, event->code);
         }
         mInputReader.next();
@@ -145,8 +143,8 @@ int LightSensor::readEvents(sensors_event_t* data, int count)
 float LightSensor::indexToValue(size_t index) const
 {
     static const float luxValues[10] = {
-            10.0, 160.0, 225.0, 320.0, 640.0,
-            1280.0, 2600.0, 5800.0, 8000.0, 10240.0
+            1.0, 3.0, 5.0, 19.0, 26.0, 69.0,
+            219.0, 309.0, 498.0, 1024.0
     };
 
     const size_t maxIndex = sizeof(luxValues)/sizeof(*luxValues) - 1;

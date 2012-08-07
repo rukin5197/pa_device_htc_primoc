@@ -28,9 +28,6 @@
 
 #include "InputEventReader.h"
 
-#define LOGE
-#define LOGE_IF
-
 /*****************************************************************************/
 
 struct input_event;
