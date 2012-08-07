@@ -21,7 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 
-PRODUCT_COPY_FILES += device/htc/primoc/prebuilt/etc/gps.conf:system/etc/gps.conf
+PRODUCT_COPY_FILES += \
+    device/htc/primoc/prebuilt/etc/gps.conf:system/etc/gps.conf
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
