@@ -103,7 +103,8 @@ PRODUCT_COPY_FILES += \
 
 # media config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/primoc/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml	
+    device/htc/primoc/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/primoc/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml	
 
 # Kernel modules
 #PRODUCT_COPY_FILES += \
