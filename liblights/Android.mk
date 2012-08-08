@@ -18,7 +18,7 @@ ifneq ($(TARGET_SIMULATOR),true)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := lights.speedy
+LOCAL_MODULE := lights.primoc
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
@@ -33,4 +33,3 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 endif # !TARGET_SIMULATOR
-
