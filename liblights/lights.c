@@ -331,11 +331,13 @@ set_speaker_light_locked(struct light_device_t* dev,
 static void
 handle_speaker_battery_locked(struct light_device_t* dev)
 {
-    if (is_lit(&g_battery)) {
-        set_speaker_light_locked(dev, &g_battery);
-    } else {
-        set_speaker_light_locked(dev, &g_notification);
-    }
+	if (is_lit (&g_battery) && is_lit (&g_notification)) {
+		set_speaker_light_locked_dual(dev, &g_battery, &g_notification);
+	} else if (is_lit (&g_battery)) {
+		set_speaker_light_locked (dev, &g_battery);
+	} else {
+		set_speaker_light_locked (dev, &g_notification);
+	}
 }
 
 static int
@@ -356,16 +358,11 @@ static int
 set_light_notifications(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    pthread_mutex_lock(&g_lock);
-    g_notification = *state;
-    ALOGV("set_light_notifications g_trackball=%d color=0x%08x",
-            g_trackball, state->color);
-    if (g_haveTrackballLight) {
-        handle_trackball_light_locked(dev);
-    }
-    handle_speaker_battery_locked(dev);
-    pthread_mutex_unlock(&g_lock);
-    return 0;
+    pthread_mutex_lock (&g_lock);
+	g_notification = *state;
+	handle_speaker_battery_locked (dev);
+	pthread_mutex_unlock (&g_lock);
+	return 0;
 }
 
 static int
@@ -430,12 +427,6 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     else if (0 == strcmp(LIGHT_ID_ATTENTION, name)) {
         set_light = set_light_attention;
     }
-    else if (0 == strcmp(LIGHT_ID_CAPS, name)) {
-        set_light = set_light_caps;
-    }
-    else if (0 == strcmp(LIGHT_ID_FUNC, name)) {
-        set_light = set_light_func;
-    }
     else {
         return -EINVAL;
     }
@@ -466,9 +457,9 @@ static struct hw_module_methods_t lights_module_methods = {
 struct hw_module_t HAL_MODULE_INFO_SYM = {
     .tag = HARDWARE_MODULE_TAG,
     .version_major = 1,
-    .version_minor = 0,
+    .version_minor = 3,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "QCT MSM7K lights Module",
-    .author = "Google, Inc.",
+    .name = "MSM 7x30 - Primo",
+    .author = "Simon Sickle",
     .methods = &lights_module_methods,
 };
