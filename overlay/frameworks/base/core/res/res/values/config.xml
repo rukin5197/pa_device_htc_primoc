@@ -50,28 +50,26 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-         <item>160</item>
-         <item>225</item>
-         <item>320</item>
-         <item>640</item>
-         <item>1280</item>
-         <item>2600</item>
-         <item>5800</item>
-         <item>8000</item>
-         <item>10240</item>
-    </integer-array>
-
-    <!-- Array of output values for LCD backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-    -->
-    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>11</item>
         <item>41</item>
-        <item>51</item>
-        <item>61</item>
-        <item>71</item>
-        <item>95</item>
-        <item>130</item>
+        <item>91</item>
+        <item>161</item>
+        <item>226</item>
+        <item>321</item>
+        <item>641</item>
+        <item>1281</item>
+        <item>2601</item>
+    </integer-array>    
+
+    <!-- Array of output values for LCD backlight corresponding to the LUX values in the config_autoBrightnessLevels array. This array should have size one greater than the size of the config_autoBrightnessLevels array. -->    
+
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>81</item>  
+        <item>81</item>        
+        <item>81</item>
+        <item>112</item>
+        <item>143</item>
+        <item>163</item>
         <item>186</item>
         <item>208</item>
         <item>231</item>
@@ -114,7 +112,7 @@
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">41</integer>
+    <integer name="config_screenBrightnessDim">10</integer>
 
     <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
          [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
@@ -188,10 +186,10 @@
     rotations as the default behavior. -->
     <bool name="config_allowAllRotations">true</bool>
 	
-	<!-- Enable use of power animations -->
+    <!-- Enable use of power animations -->
     <bool name="config_animateScreenLights">false</bool>
 	
-	<!-- The VoiceMail default value is displayed to my own number if it is true -->
+    <!-- The VoiceMail default value is displayed to my own number if it is true -->
     <bool name="config_telephony_use_own_number_for_voicemail">true</bool>
 	
 </resources>
