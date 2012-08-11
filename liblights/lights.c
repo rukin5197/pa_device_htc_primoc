@@ -194,16 +194,40 @@ static int rgb_to_brightness(struct light_state_t const* state)
             + (150*((color>>8)&0x00ff)) + (29*(color&0x00ff))) >> 8;
 }
 
-static int set_light_backlight(struct light_device_t* dev,
-		struct light_state_t const* state) {
+static int set_light_backlight(struct light_device_t *dev,
+			       struct light_state_t const *state)
+{
 	int err = 0;
 	int brightness = rgb_to_brightness(state);
-	ALOGV("%s brightness=%d color=0x%08x",
-		__func__,brightness, state->color);
+	//+++ power save
+	int range_num = 1;
+	int old_brightness_range_indexs[] = {160,255};
+	int new_brightness_range_indexs[] = {160,182};
+	int old_brightness = brightness;
+	int i=0;
+	int old_brightness_in_range = -1;
+	for(i=0;i<range_num;i++){
+		int t_range_min = old_brightness_range_indexs[i];
+		int t_range_max = old_brightness_range_indexs[i+1];
+		if( brightness>=t_range_min && brightness<=t_range_max){
+			old_brightness_in_range = i;
+			break;
+		}
+	}
+	if(old_brightness_in_range>=0){
+		int old_br_min = old_brightness_range_indexs[old_brightness_in_range];
+		int olb_br_max = old_brightness_range_indexs[old_brightness_in_range+1];
+		int new_br_min = new_brightness_range_indexs[old_brightness_in_range];
+		int new_br_max = new_brightness_range_indexs[old_brightness_in_range+1];
+		int new_brightness = new_br_min +
+				(new_br_max-new_br_min)*(old_brightness-old_br_min)/(olb_br_max-old_br_min);
+		brightness = new_brightness;
+	}
 	pthread_mutex_lock(&g_lock);
-	g_backlight = brightness;
-	err = write_int(LCD_BACKLIGHT_FILE, brightness);
+	err = write_int("/sys/class/leds/lcd-backlight/brightness",
+			brightness);
 	pthread_mutex_unlock(&g_lock);
+
 	return err;
 }
 
@@ -219,7 +243,6 @@ static int set_light_battery (struct light_device_t* dev,
 
 static int set_light_attention (struct light_device_t* dev,
 		struct light_state_t const* state) {
-	/* bravo has no attention, bad bravo */
 
 	return 0;
 }
@@ -288,9 +311,9 @@ static struct hw_module_methods_t lights_module_methods = {
 struct hw_module_t HAL_MODULE_INFO_SYM = {
 	.tag = HARDWARE_MODULE_TAG,
 	.version_major = 1,
-	.version_minor = 0,
+	.version_minor = 9,
 	.id = LIGHTS_HARDWARE_MODULE_ID,
-	.name = "Bravo lights module",
-	.author = "Diogo Ferreira <diogo@underdev.org>",
+	.name = "Primo Lights",
+	.author = "Simon Sickle <simonsimons34@gmail.com>",
 	.methods = &lights_module_methods,
 };
