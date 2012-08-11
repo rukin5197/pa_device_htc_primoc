@@ -78,6 +78,8 @@ PRODUCT_PACKAGES += \
 # Additional packages
 PRODUCT_PACKAGES += \
     GooManager \
+    LegacyCamera \
+    Torch \
     PopNetwork
 
 # idc files

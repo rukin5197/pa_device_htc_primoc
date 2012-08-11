@@ -104,7 +104,3 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_otg/msm_hsusb/gadge
 # Webkit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
-
-# Testing
-#BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-TARGET_NEEDS_BLUETOOTH_INIT_DELAY := true
