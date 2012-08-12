@@ -123,6 +123,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko
+    device/htc/primoc/prebuilt/modules/bnep.ko:system/lib/modules/bnep.ko
+    device/htc/primoc/prebuilt/modules/hci_uart.ko:system/lib/modules/hci_uart.ko
+    device/htc/primoc/prebuilt/modules/hidp.ko.ko:system/lib/modules/hidp.ko
+    device/htc/primoc/prebuilt/modules/rfcomm.ko:system/lib/modules/rfcomm.ko
 
 $(call inherit-product, build/target/product/full_base.mk)
 
