@@ -16,7 +16,6 @@
 
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
@@ -77,10 +76,7 @@ PRODUCT_PACKAGES += \
 
 # Additional packages
 PRODUCT_PACKAGES += \
-    GooManager \
-    LegacyCamera \
-    Torch \
-    PopNetwork
+    Torch
 
 # idc files
 PRODUCT_COPY_FILES += \
@@ -123,10 +119,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko
-    device/htc/primoc/prebuilt/modules/bnep.ko:system/lib/modules/bnep.ko
-    device/htc/primoc/prebuilt/modules/hci_uart.ko:system/lib/modules/hci_uart.ko
-    device/htc/primoc/prebuilt/modules/hidp.ko.ko:system/lib/modules/hidp.ko
-    device/htc/primoc/prebuilt/modules/rfcomm.ko:system/lib/modules/rfcomm.ko
 
 $(call inherit-product, build/target/product/full_base.mk)
 
@@ -135,9 +127,3 @@ $(call inherit-product, device/htc/primoc/media_a1026.mk)
 $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
-# Goo updater app
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.goo.developerid=jmz \
-ro.goo.rom=cm10primoc \
-ro.goo.version=4

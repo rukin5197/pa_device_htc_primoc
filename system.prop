@@ -1,8 +1,6 @@
 #
 # system.prop for primoc
 #
-#belongs in mk as overide
-#ro.sf.lcd_density=240
 
 #qcom display
 debug.sf.hw=1
@@ -10,13 +8,8 @@ debug.composition.type=dyn
 ro.sf.compbypass.enable=1
 dev.pm.dyn_samplingrate=1
 
-#make file override suggested
 com.qc.hardware=true
 com.qc.hdmi_out=false
-
-#not needed should delete after mms is working
-# Modify MMS APN retry timer from 5s to 2s.
-#ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
 
 #these arent stock but they work well
 rild.libpath=/system/lib/libhtc_ril.so
@@ -40,7 +33,7 @@ ro.ril.hsupa.category=6
 ro.telephony.default_network=4
 
 wifi.interface=wlan0
-wifi.supplicant_scan_interval=15
+wifi.supplicant_scan_interval=150
 
 mobiledata.interfaces=rmnet0,rmnet1,rmnet2
 
