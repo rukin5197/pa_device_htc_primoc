@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2011, The Android Open Source Project
+** Copyright 2012, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@
     <integer name="config_deskDockKeepsScreenOn">0</integer>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>
+    <bool name="config_unplugTurnsOnScreen">false</bool>
 
     <!-- Package name providing network location support. -->
     <string name="config_networkLocationProviderPackageName" translatable="false">com.google.android.location</string>
@@ -38,6 +38,18 @@
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
+	
+	<!-- Default color for notification LED is green. -->
+    <color name="config_defaultNotificationColor">#ff00ff00</color>
+
+    <!-- Default LED on time for notification LED in milliseconds. -->
+    <integer name="config_defaultNotificationLedOn">1000</integer>
+
+    <!-- Default LED off time for notification LED in milliseconds. -->
+    <integer name="config_defaultNotificationLedOff">9000</integer>
+	
+	<!-- Minimum screen brightness allowed by the power manager. -->
+    <integer name="config_screenBrightnessDim">10</integer>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 zones as follows:
@@ -50,15 +62,15 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>3</item>
-        <item>5</item>
-        <item>72</item>
-        <item>140</item>
-        <item>1450</item>
-        <item>2533</item>
-        <item>3990</item>
-        <item>5447</item>
-        <item>65535</item>
+        <item>11</item>
+        <item>41</item>
+        <item>91</item>
+        <item>161</item>
+        <item>226</item>
+        <item>321</item>
+        <item>641</item>
+        <item>1281</item>
+        <item>2601</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -66,12 +78,12 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>41</item>
-        <item>51</item>
-        <item>61</item>
-        <item>71</item>
-        <item>95</item>
-        <item>130</item>
+        <item>81</item>
+        <item>81</item>
+        <item>81</item>
+        <item>112</item>
+        <item>143</item>
+        <item>163</item>
         <item>186</item>
         <item>208</item>
         <item>231</item>
@@ -112,9 +124,6 @@
         <item>0</item>
         <item>0</item>
     </integer-array>
-
-    <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">31</integer>
 
     <!-- An Array of "[Connection name],[ConnectivityManager.TYPE_xxxx],
          [associated radio-type],[priority],[restoral-timer(ms)],[dependencyMet]  -->
@@ -172,6 +181,18 @@
         <item>7</item>
     </integer-array>
 
+	<!-- Set to true if the RSSI should always display CDMA signal
+         strength even on EVDO -->
+    <bool name="config_alwaysUseCdmaRssi">true</bool>
+	
+	<!-- Vibrator pattern for feedback about touching a virtual key -->
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>40</item>
+    </integer-array>
+	
+	<!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">true</bool>
+	
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
@@ -196,5 +217,8 @@
 
     <!-- Testing bluetooth wake lock problem -->
     <bool name="config_bluetooth_adapter_quick_switch">false</bool>
+	
+	<!-- This is partially causing no screen fully off -->
+    <bool name="config_animateScreenLights">false</bool>
 	
 </resources>
