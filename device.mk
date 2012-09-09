@@ -100,7 +100,8 @@ PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/usr/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
 
 PRODUCT_COPY_FILES += \
-    device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+    device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
+    device/htc/primoc/prebuilt/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv
 
 # media config xml file
 PRODUCT_COPY_FILES += \
