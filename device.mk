@@ -69,9 +69,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/primoc/overlay
 
-# Inherit qcom proprietary blobs
-$(call inherit-product, vendor/qcom/proprietary/qcom-vendor.mk)
-
 # GPS / Lights / Sensors
 PRODUCT_PACKAGES += \
     gps.primoc \
