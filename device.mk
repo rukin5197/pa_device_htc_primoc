@@ -101,7 +101,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
-    device/htc/primoc/prebuilt/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv
+    device/htc/primoc/prebuilt/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
+    device/htc/primoc/prebuilt/lib/hw/hwcomposer.msm7x30.so:system/lib/hw/hwcomposer.msm7x30.so
 
 # media config xml file
 PRODUCT_COPY_FILES += \
