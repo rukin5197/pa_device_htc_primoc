@@ -19,3 +19,13 @@ PRODUCT_COPY_FILES += \
    vendor/aokp/prebuilt/common/app/Apollo.apk:system/app/Apollo.apk \
    vendor/aokp/prebuilt/common/app/DSPManager.apk:system/app/DSPManager.apk \
    vendor/aokp/prebuilt/common/bin/50-cm.sh:system/bin/50-cm.sh
+
+# Bootanimation
+PRODUCT_COPY_FILES += \
+   vendor/aokp/prebuilt/bootanimation/bootanimation_480_800.zip:system/media/bootanimation.zip
+
+# Goo.im
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.goo.developerid=gannon5197 \
+ro.goo.rom=aokpjb_$(TARGET_PRODUCT) \
+ro.goo.version=1
