@@ -16,7 +16,6 @@ PRODUCT_DEVICE := primoc
 # Common Apps
 
 PRODUCT_COPY_FILES += \
-   vendor/aokp/prebuilt/common/app/Apollo.apk:system/app/Apollo.apk \
    vendor/aokp/prebuilt/common/app/DSPManager.apk:system/app/DSPManager.apk \
    vendor/aokp/prebuilt/common/bin/50-cm.sh:system/bin/50-cm.sh
 
@@ -28,4 +27,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.goo.developerid=gannon5197 \
 ro.goo.rom=aokpjb_$(TARGET_PRODUCT) \
-ro.goo.version=1
+ro.goo.version=2
