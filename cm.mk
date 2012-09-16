@@ -27,4 +27,4 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.goo.developerid=gannon5197 \
 ro.goo.rom=aokpjb_$(TARGET_PRODUCT) \
-ro.goo.version=2
+ro.goo.version=3
