@@ -17,7 +17,6 @@
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, vendor/qcom/proprietary/qcom-vendor.mk)
 
 # The gps config appropriate for this device
 
@@ -68,6 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/primoc/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/aokp/overlay/primoc
 
 # GPS / Lights / Sensors
 PRODUCT_PACKAGES += \
@@ -132,3 +132,14 @@ $(call inherit-product, device/htc/primoc/media_a1026.mk)
 $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
+# Goo.im
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.goo.developerid=gannon5197 \
+ro.goo.rom=aokpjb_$(TARGET_PRODUCT) \
+ro.goo.version=5
+
+# Common Apps
+PRODUCT_COPY_FILES += \
+   vendor/aokp/prebuilt/common/app/DSPManager.apk:system/app/DSPManager.apk \
+   vendor/aokp/prebuilt/common/bin/50-cm.sh:system/bin/50-cm.sh
