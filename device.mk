@@ -101,8 +101,6 @@ PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
     device/htc/primoc/prebuilt/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
     device/htc/primoc/prebuilt/lib/hw/hwcomposer.msm7x30.so:system/lib/hw/hwcomposer.msm7x30.so \
-    ../triumph/out/target/product/triumph/system/app/DeskClock.apk:system/app/DeskClock.apk \
-    ../triumph/out/target/product/triumph/system/app/Apollo.apk:system/app/Apollo.apk
 
 # media config xml file
 PRODUCT_COPY_FILES += \
@@ -132,14 +130,3 @@ $(call inherit-product, device/htc/primoc/media_a1026.mk)
 $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
-# Goo.im
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.goo.developerid=gannon5197 \
-ro.goo.rom=aokpjb_$(TARGET_PRODUCT) \
-ro.goo.version=5
-
-# Common Apps
-PRODUCT_COPY_FILES += \
-   vendor/aokp/prebuilt/common/app/DSPManager.apk:system/app/DSPManager.apk \
-   vendor/aokp/prebuilt/common/bin/50-cm.sh:system/bin/50-cm.sh
