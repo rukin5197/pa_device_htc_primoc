@@ -123,6 +123,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko
 
+$(call inherit-product, vendor/htc/primoc/qcom-vendor.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 # HTC Audio
