@@ -17,7 +17,6 @@
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, vendor/htc/primoc/qcom-vendor.mk)
 
 # The gps config appropriate for this device
 
@@ -68,6 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/primoc/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/aokp/overlay/primoc
 
 # GPS / Lights / Sensors
 PRODUCT_PACKAGES += \
@@ -100,8 +100,8 @@ PRODUCT_COPY_FILES += \
 # My shit
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
+    device/htc/primoc/prebuilt/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
     device/htc/primoc/prebuilt/lib/hw/hwcomposer.msm7x30.so:system/lib/hw/hwcomposer.msm7x30.so \
-    device/htc/primoc/prebuilt/etc/AdieHWCodec.csv:system/etc/AdieHWCodec.csv
 
 # media config xml file
 PRODUCT_COPY_FILES += \
@@ -124,6 +124,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko
 
+$(call inherit-product, vendor/htc/primoc/qcom-vendor.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 # HTC Audio
