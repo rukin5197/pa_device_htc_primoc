@@ -190,8 +190,6 @@
 
     <!-- Values greater or equal to 0 will enable electronbeam screen-on
 animation with the specified delay (in milliseconds), -1 will disable the animation -->
-    <integer name="config_screenOnAnimation">-1</integer>
-	<bool name="config_screenOffAnimation">false</bool>
 	<bool name="config_animateScreenLights">false</bool>
 	
 	<!-- Vibrator pattern for feedback about touching a virtual key -->
