@@ -104,6 +104,8 @@ PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     device/htc/primoc/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml	
 
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+
 # Kernel modules
 #PRODUCT_COPY_FILES += \
 
