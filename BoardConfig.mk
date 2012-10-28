@@ -52,6 +52,11 @@ BOARD_USES_QCOM_AUDIO_VOIPMUTE := false
 BOARD_USES_QCOM_AUDIO_RESETALL := false
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
 
+# Webkit
+ENABLE_WEBGL := true
+TARGET_FORCE_CPU_UPLOAD := true
+DYNAMIC_SHARED_LIBV8SO := true
+
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
