@@ -1,11 +1,11 @@
 # Inherit AOSP device configuration for primoc.
 $(call inherit-product, device/htc/primoc/full_primoc.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common ev stuff.
+$(call inherit-product, vendor/ev/config/common_full_phone.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/cdma.mk)
+# Inherit some common ev stuff.
+$(call inherit-product, vendor/ev/config/cdma.mk)
 
 PRODUCT_NAME := ev_primoc
 PRODUCT_BRAND := htc
