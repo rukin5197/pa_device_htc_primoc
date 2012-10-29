@@ -56,7 +56,7 @@ BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
 DYNAMIC_SHARED_LIBV8SO := true
-
+TARGET_USES_PMEM := true
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
