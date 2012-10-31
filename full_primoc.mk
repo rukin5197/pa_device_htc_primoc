@@ -59,12 +59,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     gsm.operator.alpha=$(CDMA_CARRIER_ALPHA) \
     gsm.operator.numeric=$(CDMA_CARRIER_NUMERIC)
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.service.adb.enable=1
-
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
@@ -121,16 +115,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-PRODUCT_COPY_FILES += \
-    device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
-    device/htc/primoc/prebuilt/modules/cpaccess.ko:system/lib/modules/cpaccess.ko \
-    device/htc/primoc/prebuilt/modules/dma_test.ko:system/lib/modules/dma_test.ko \
-    device/htc/primoc/prebuilt/modules/reset_modem.ko:system/lib/modules/reset_modem.ko
-	
-
 # HTC Audio
 $(call inherit-product, device/htc/primoc/media_a1026.mk)
 $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+
+PRODUCT_NAME := ev_primoc
