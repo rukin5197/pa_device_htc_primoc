@@ -59,7 +59,3 @@ ro.camera.sound.disabled=1
 persist.sys.usb.config=mass_storage,adb
 
 dalvik.vm.dexopt-data-only=1
-
-#disable system restrictions for all builds
-persist.sys.strictmode.visual=0
-ro.secure=0
