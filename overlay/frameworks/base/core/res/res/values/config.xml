@@ -197,6 +197,7 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">7</integer>
+
     <!-- Values greater or equal to 0 will enable electronbeam screen-on
 animation with the specified delay (in milliseconds), -1 will disable the animation -->
 	<bool name="config_animateScreenLights">false</bool>
