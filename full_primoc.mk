@@ -123,4 +123,6 @@ $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
-PRODUCT_NAME := ev_primoc
+PRODUCT_NAME := htc_primoc
+PRODUCT_DEVICE := primoc
+PRODUCT_MODEL := Full Android on PrimoC
