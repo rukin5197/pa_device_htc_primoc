@@ -84,12 +84,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     gsm.operator.alpha=$(CDMA_CARRIER_ALPHA) \
     gsm.operator.numeric=$(CDMA_CARRIER_NUMERIC)
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.service.adb.enable=1
-
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
@@ -124,7 +118,8 @@ PRODUCT_COPY_FILES += \
     device/htc/primoc/prebuilt/usr/keylayout/synaptics-rmi-touchscreen.kl:system/usr/keylayout/synaptics-rmi-touchscreen.kl
 
 PRODUCT_COPY_FILES += \
-    device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab
+    device/htc/primoc/prebuilt/etc/vold.fstab:system/etc/vold.fstab \
+    device/htc/primoc/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # media config xml file
 PRODUCT_COPY_FILES += \
@@ -145,13 +140,6 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
-
-PRODUCT_COPY_FILES += \
-    device/htc/primoc/prebuilt/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
-    device/htc/primoc/prebuilt/modules/cpaccess.ko:system/lib/modules/cpaccess.ko \
-    device/htc/primoc/prebuilt/modules/dma_test.ko:system/lib/modules/dma_test.ko \
-    device/htc/primoc/prebuilt/modules/reset_modem.ko:system/lib/modules/reset_modem.ko
-	
 
 # HTC Audio
 $(call inherit-product, device/htc/primoc/media_a1026.mk)
