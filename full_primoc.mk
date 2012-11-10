@@ -34,6 +34,7 @@ PRODUCT_NAME := full_primoc
 PRODUCT_DEVICE := primoc
 PRODUCT_BRAND := HTC
 PRODUCT_MODEL := One V
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_primoc BUILD_FINGERPRINT=virgin_mobile/htc_primoc/primou:4.1.1/JRO03L/330937:user/release-keys PRIVATE_BUILD_DESC="4.1.1 JRO03L 330937 release-keys"
 #
 
 # common msm7x30 configs
@@ -144,7 +145,3 @@ $(call inherit-product, device/htc/primoc/media_htcaudio.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
-PRODUCT_NAME := htc_primoc
-PRODUCT_DEVICE := primoc
-PRODUCT_MODEL := Full Android on PrimoC
